@@ -1,0 +1,11 @@
+name: continuous-pull
+channels:
+- conda-forge
+dependencies:
+# Actual requirements
+- python=3.7
+- click=7.0
+# Development tools
+- black=19.3b0
+- mypy=0.720
+- flake8=3.7.8
