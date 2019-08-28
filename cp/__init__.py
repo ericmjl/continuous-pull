@@ -23,7 +23,7 @@ import os
 def main(interval: int = 60, hide_output: bool = False):
     logging.info(f"Currently in directory {os.getcwd()}.")
     while True:
-        subprocess.run("git pull".split(), capture_output=hide_output)
+        subprocess.run("git pull".split(), capture_output=hide_output, shell=True)
         sleep(interval)
 
 
