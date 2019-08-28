@@ -20,10 +20,16 @@ import os
     type=bool,
     default=False,
 )
-def main(interval: int = 60, hide_output: bool = False):
+@click.option(
+    "--use-shell",
+    prompt="Do you want to use shell subprocess?",
+    type=book,
+    default=True
+)
+def main(interval: int = 60, hide_output: bool = False, use_shell=False):
     logging.info(f"Currently in directory {os.getcwd()}.")
     while True:
-        subprocess.run("git pull".split(), capture_output=hide_output, shell=True)
+        subprocess.run("git pull".split(), capture_output=hide_output, shell=use_shell)
         sleep(interval)
 
 
