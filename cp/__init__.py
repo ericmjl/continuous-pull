@@ -31,7 +31,7 @@ def main(branch: str = "master", interval: int = 60, hide: bool = False):
     logging.info(f"Checking out {branch}...")
     subprocess.run(f"git checkout {branch}".split(), capture_output=hide)
     while True:
-        subprocess.run("git pull".split(), capture_output=hide)
+        subprocess.run("git pull", capture_output=hide, shell=True)
         sleep(interval)
 
 
